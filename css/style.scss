@@ -1,0 +1,108 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #2A3539;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    
+
+    .row {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .image {
+            max-width: 450px;
+            height: 300px;
+            margin: 15px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .info {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                color: white;
+                transform: translateY(50px);
+                transition: .5s;
+                padding-bottom: 70px;
+
+                .title {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+                .description {
+                    font-size: 1.1rem;
+                    opacity: 0;
+                    transition: .5s;
+                }
+                .more {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 20px;
+                    box-sizing: border-box;
+                    background-color: lightgrey;
+                    font-size: 1.3rem;
+                    opacity: 0;
+                    transition: .5s;
+
+                    .more-btn {
+                        text-decoration: none;
+                        color: black;
+                    }
+                    .icon-links {
+                        a {
+                            margin: 0 10px;
+                            color: black;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .info {
+                    transform: translateY(0);
+
+                    .description {
+                        opacity: 1;
+                    }
+                    .more {
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+
+@media (max-width: 1050px) {
+    .row {
+        flex-direction: column;
+    }
+}
